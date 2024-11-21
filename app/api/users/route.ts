@@ -9,7 +9,7 @@ import {
   updateReview,
 } from "@/lib/apis";
 
-export async function GET(req: Request, res: Response) {
+export async function GET() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -26,7 +26,7 @@ export async function GET(req: Request, res: Response) {
   }
 }
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -62,7 +62,7 @@ export async function POST(req: Request, res: Response) {
     }
 
     return NextResponse.json(data, { status: 200, statusText: "Successful" });
-  } catch (_) {
-    return new NextResponse("Unable to create review", { status: 400 });
+  } catch (error: any) {
+    return new NextResponse(error, { status: 400 });
   }
 }

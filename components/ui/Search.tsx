@@ -5,22 +5,22 @@ type Props = {
   roomTypeFilter: string;
   searchQuery: string;
   adults?: number;
-  children?: number;
+  kids?: number;
   setRoomTypeFilter: (value: string) => void;
   setSearchQuery: (value: string) => void;
   setAdults?: (value: number) => void;
-  setChildren?: (value: number) => void;
+  setKids?: (value: number) => void;
 };
 
 const Search: FC<Props> = ({
   roomTypeFilter,
   searchQuery,
   adults,
-  children,
+  kids,
   setRoomTypeFilter,
   setSearchQuery,
   setAdults,
-  setChildren,
+  setKids,
 }) => {
   const router = useRouter();
   const handleRoomTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -33,11 +33,11 @@ const Search: FC<Props> = ({
     setAdults?.(Number(e.target.value));
   };
   const handleChildrenChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setChildren?.(Number(e.target.value));
+    setKids?.(Number(e.target.value));
   };
   const handleFilterClick = () => {
     router.push(
-      `/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}&numberOfAdults=${adults}&numberOfChildren=${children}`
+      `/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}&numberOfAdults=${adults}&numberOfChildren=${kids}`
     );
   };
 
@@ -88,7 +88,7 @@ const Search: FC<Props> = ({
               className="w-full px-4 py-2 capitalize leading-tight focus:outline-none text-sm rounded-[12px] border shadow-[0_1px_2px_0] shadow-gray border-[#CED4DA] dark:bg-black/90 dark:text-white"
               min={0}
               placeholder="0"
-              value={children}
+              value={kids}
               onChange={handleChildrenChange}
             />
           </div>

@@ -14,7 +14,7 @@ export default function Page() {
   const [roomTypeFilter, setRoomTypeFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [adults, setAdults] = useState(0);
-  const [children, setChildren] = useState(0);
+  const [kids, setKids] = useState(0);
 
   const searchParams = useSearchParams();
 
@@ -61,7 +61,7 @@ export default function Page() {
       }
 
       // check number of children
-      if (children && children < room.numberOfChildren) {
+      if (kids && kids < room.numberOfChildren) {
         return false;
       }
 
@@ -101,8 +101,8 @@ export default function Page() {
           setSearchQuery={setSearchQuery}
           adults={adults}
           setAdults={setAdults}
-          children={children}
-          setChildren={setChildren}
+          kids={kids}
+          setKids={setKids}
         />
         <div className="flex flex-col lg:flex-row justify-between gap-6 mt-10">
           <div className="w-full flex flex-wrap items-center gap-[10px] justify-betweendd">

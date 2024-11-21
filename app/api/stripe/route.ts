@@ -94,8 +94,10 @@ export async function POST(req: Request) {
       status: 200,
       statusText: "Payment session created",
     });
-  } catch (error: any) {
-    console.error("Payment falied", error);
-    return new NextResponse(error, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return new NextResponse(error.message, { status: 500 });
+    }
+    return new NextResponse("An unexpected error occurred", { status: 500 });
   }
 }

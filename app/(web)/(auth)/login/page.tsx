@@ -38,8 +38,7 @@ export default function Page() {
     try {
       await signIn();
       router.push("/");
-    } catch (error) {
-      console.error(error);
+    } catch (_) {
       toast.error("Something wen't wrong");
     }
   };
