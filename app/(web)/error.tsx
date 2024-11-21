@@ -12,6 +12,9 @@ export default function Error({
       <h2 className="font-bold text-3xl text-red-800 mb-5">
         Something went wrong!
       </h2>
+      <p className="text-red-600">
+        {error.message || "An unexpected error occurred."}
+      </p>
 
       <button
         onClick={() => reset()}

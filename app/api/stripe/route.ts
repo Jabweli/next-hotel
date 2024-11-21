@@ -18,7 +18,7 @@ type RequestData = {
   hotelRoomSlug: string;
 };
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   const {
     checkinDate,
     adults,
@@ -66,7 +66,9 @@ export async function POST(req: Request, res: Response) {
             product_data: {
               name: room.name,
               images: room.gallery.map(
-                (image) => urlBuilder(image.image)?.url()!
+                (image) =>
+                  urlBuilder(image.image)?.url() ||
+                  "https://placehold.co/600x400"
               ),
             },
             unit_amount: parseInt((totalPrice * 100).toString()),

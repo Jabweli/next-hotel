@@ -121,7 +121,10 @@ export default function PhotoGallery({ gallery }: GalleryProps) {
             onClick={() => openModal(maxVisiblePhotos)}
           >
             <Image
-              src={urlBuilder(gallery[maxVisiblePhotos - 1].image)?.url()!}
+              src={
+                urlBuilder(gallery[maxVisiblePhotos - 1].image)?.url() ||
+                "https://placehold.co/600x400"
+              }
               alt={gallery[maxVisiblePhotos - 1].altText}
               width={gallery[maxVisiblePhotos - 1].width}
               height={gallery[maxVisiblePhotos - 1].height}

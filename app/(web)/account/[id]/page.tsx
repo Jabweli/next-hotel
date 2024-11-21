@@ -47,7 +47,8 @@ export default function AccountPage(props: { params: Promise<Params> }) {
         roomId,
       });
       toast.success("Review Submitted");
-    } catch (_error) {
+    } catch (error) {
+      console.error(error);
       toast.error("Review Failed");
     } finally {
       setRatingText("");

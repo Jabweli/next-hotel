@@ -38,7 +38,7 @@ export default function Page() {
       await signIn();
       router.push("/");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -50,6 +50,7 @@ export default function Page() {
         toast.success("Success. Please sign in");
       }
     } catch (error) {
+      console.error(error);
       toast.error("Something went wrong, try again!");
     } finally {
       setFormData(defaultFormData);

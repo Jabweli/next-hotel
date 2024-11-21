@@ -1,6 +1,6 @@
 "use client";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import useSWR from "swr";
 
 import AnimatedText from "@/components/ui/AnimatedText";
@@ -15,6 +15,7 @@ export default function Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
+
   const searchParams = useSearchParams();
 
   useEffect(() => {

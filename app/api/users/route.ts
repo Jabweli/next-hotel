@@ -62,8 +62,7 @@ export async function POST(req: Request, res: Response) {
     }
 
     return NextResponse.json(data, { status: 200, statusText: "Successful" });
-  } catch (_error: any) {
-    console.error("Error Updating", _error);
+  } catch (_) {
     return new NextResponse("Unable to create review", { status: 400 });
   }
 }
