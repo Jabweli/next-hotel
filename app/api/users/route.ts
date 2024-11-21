@@ -21,7 +21,7 @@ export async function GET() {
   try {
     const data = await getUserData(userId);
     return NextResponse.json(data, { status: 200, statusText: "Successful" });
-  } catch (error) {
+  } catch (error: unknown) {
     console.error(error);
     return new NextResponse("Unable to fetch", { status: 400 });
   }
@@ -63,7 +63,10 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json(data, { status: 200, statusText: "Successful" });
-  } catch (error: any) {
-    return new NextResponse(error, { status: 400 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return new NextResponse(error.message, { status: 500 });
+    }
+    return new NextResponse("An unexpected error occurred", { status: 400 });
   }
 }
