@@ -22,6 +22,7 @@ export async function GET() {
     const data = await getUserData(userId);
     return NextResponse.json(data, { status: 200, statusText: "Successful" });
   } catch (error) {
+    console.error(error);
     return new NextResponse("Unable to fetch", { status: 400 });
   }
 }
