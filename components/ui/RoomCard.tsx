@@ -35,7 +35,10 @@ export default function RoomCard({
         className={`w-full h-[350px] relative z-10 overflow-hidden rounded-3xl ${imgStyles}`}
       >
         <Image
-          src={urlBuilder(coverImage.image)?.url()!}
+          src={
+            urlBuilder(coverImage.image)?.url() ||
+            "https://placehold.co/800x600"
+          }
           alt="room"
           width={coverImage.width}
           height={coverImage.height}

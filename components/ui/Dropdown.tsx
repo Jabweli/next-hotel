@@ -2,7 +2,6 @@ import React from "react";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { BiUser } from "react-icons/bi";
 import { PiSignOutBold } from "react-icons/pi";
-import { UserAvatar } from "sanity";
 import Link from "next/link";
 
 export default function Dropdown() {

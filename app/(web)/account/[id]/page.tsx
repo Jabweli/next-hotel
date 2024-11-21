@@ -41,13 +41,13 @@ export default function AccountPage(props: { params: Promise<Params> }) {
     setIsSubmittingReview(true);
 
     try {
-      const { data } = await axios.post("/api/users", {
+      await axios.post("/api/users", {
         reviewText: ratingText,
         ratingValue,
         roomId,
       });
       toast.success("Review Submitted");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Review Failed");
     } finally {
       setRatingText("");

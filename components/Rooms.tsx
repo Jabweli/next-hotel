@@ -10,7 +10,7 @@ import { getAllRooms } from "@/lib/apis";
 import useSWR from "swr";
 
 export default function Rooms() {
-  let settings = {
+  const settings = {
     dots: false,
     infinite: true,
     slidesToShow: 4,

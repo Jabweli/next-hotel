@@ -18,7 +18,7 @@ export default function Hero() {
             classname="text-4xl md:text-5xl font-black text-wrap"
           />
         </div>
-        <p className="font-bold">Let's get acquainted!</p>
+        <p className="font-bold">Let&rsquo;s get acquainted!</p>
 
         <div className="flex flex-col xl:flex-row mt-5 gap-5 w-full">
           <p className="hidden xl:block font-black">05</p>

@@ -44,7 +44,10 @@ export default function PhotoGallery({ gallery }: GalleryProps) {
       <div className="h-[350px] flex-1 relative rounded-2xl overflow-hidden cursor-pointer">
         <div className="w-full h-full hidden lg:flex">
           <Image
-            src={urlBuilder(gallery[0].image)?.url()!}
+            src={
+              urlBuilder(gallery[0].image)?.url() ||
+              "https://placehold.co/800x600"
+            }
             alt="room"
             className="rounded-xl img-scale-animation w-full h-full object-cover"
             priority
@@ -56,7 +59,10 @@ export default function PhotoGallery({ gallery }: GalleryProps) {
 
         <div className="w-full h-full lg:hidden flex">
           <Image
-            src={urlBuilder(gallery[currentPhotoIndex].image)?.url()!}
+            src={
+              urlBuilder(gallery[currentPhotoIndex].image)?.url() ||
+              "https://placehold.co/800x600"
+            }
             alt="room"
             className="rounded-xl img-scale-animation w-full h-full object-cover"
             priority
@@ -95,7 +101,10 @@ export default function PhotoGallery({ gallery }: GalleryProps) {
               className="relative w-[48%] h-[170px] rounded-2xl overflow-hidden"
             >
               <Image
-                src={urlBuilder(image.image)?.url()!}
+                src={
+                  urlBuilder(image.image)?.url() ||
+                  "https://placehold.co/600x400"
+                }
                 alt="room"
                 width={image.width}
                 height={image.height}
@@ -131,7 +140,10 @@ export default function PhotoGallery({ gallery }: GalleryProps) {
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]">
           <div className="h-[75vh] w-[320px] md:w-[700px] relative">
             <Image
-              src={urlBuilder(gallery[currentPhotoIndex].image)?.url()!}
+              src={
+                urlBuilder(gallery[currentPhotoIndex].image)?.url() ||
+                "https://placehold.co/600x400"
+              }
               alt={`Room Photo ${currentPhotoIndex + 1}`}
               width={gallery[currentPhotoIndex].width}
               height={gallery[currentPhotoIndex].height}

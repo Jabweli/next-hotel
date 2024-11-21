@@ -24,7 +24,7 @@ export default function Page() {
             animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
             className="font-bold"
           >
-            Let's get acquainted!
+            Let&rsquo;s get acquainted!
           </motion.p>
         </div>
 
