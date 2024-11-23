@@ -193,9 +193,6 @@ export default function Page(props: { params: Promise<Params> }) {
             <h2 className="font-bold text-xl">Description</h2>
             <p className="mt-3 text-[15px] text-[#1b1b1b] dark:text-white/50">
               {room.description}
-              {/* <span className="text-black dark:text-white font-semibold">
-                Show more
-              </span> */}
             </p>
           </div>
 
